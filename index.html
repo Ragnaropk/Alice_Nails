@@ -1,0 +1,757 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Aliice H. Studio Nails: uñas de gel, esmaltado semipermanente y nail art personalizado. Agenda o cotiza tu diseño por WhatsApp.">
+    <title>Aliice H. Studio Nails | Nail Art Personalizado</title>
+    <style>
+        :root {
+            --ink: #24191d;
+            --muted: #725f67;
+            --paper: #fffafb;
+            --blush: #ffe6ee;
+            --rose: #e95c8f;
+            --wine: #722641;
+            --sage: #6f8878;
+            --gold: #c9a54a;
+            --whatsapp: #25d366;
+            --facebook: #1877f2;
+            --shadow: 0 22px 60px rgba(67, 31, 43, 0.16);
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            margin: 0;
+            background: var(--paper);
+            color: var(--ink);
+            font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+        }
+
+        img {
+            display: block;
+            max-width: 100%;
+        }
+
+        a {
+            color: inherit;
+        }
+
+        .topbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: 20;
+            width: 100%;
+            padding: 14px clamp(18px, 4vw, 56px);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 18px;
+            background: rgba(255, 250, 251, 0.86);
+            border-bottom: 1px solid rgba(114, 38, 65, 0.1);
+            backdrop-filter: blur(16px);
+        }
+
+        .brand {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            min-width: 0;
+            text-decoration: none;
+        }
+
+        .brand-logo {
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 2px solid rgba(201, 165, 74, 0.6);
+            box-shadow: 0 8px 22px rgba(36, 25, 29, 0.12);
+        }
+
+        .brand-name {
+            display: grid;
+            line-height: 1.08;
+            font-weight: 800;
+            letter-spacing: 0;
+        }
+
+        .brand-name small {
+            color: var(--muted);
+            font-size: 0.74rem;
+            font-weight: 600;
+            text-transform: uppercase;
+        }
+
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .icon-link {
+            min-width: 44px;
+            min-height: 44px;
+            padding: 0 14px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            border: 1px solid rgba(114, 38, 65, 0.14);
+            border-radius: 999px;
+            background: white;
+            color: var(--wine);
+            font-weight: 800;
+            text-decoration: none;
+            box-shadow: 0 8px 18px rgba(36, 25, 29, 0.08);
+        }
+
+        .hero {
+            min-height: 84vh;
+            padding: 122px clamp(20px, 5vw, 72px) 58px;
+            display: grid;
+            align-items: end;
+            background:
+                linear-gradient(90deg, rgba(36, 25, 29, 0.82) 0%, rgba(36, 25, 29, 0.58) 42%, rgba(36, 25, 29, 0.18) 100%),
+                url("9.jpeg");
+            background-size: cover;
+            background-position: center 58%;
+            color: white;
+        }
+
+        .hero-inner {
+            max-width: 780px;
+        }
+
+        .eyebrow {
+            margin: 0 0 16px;
+            color: #ffe1ec;
+            font-size: 0.82rem;
+            font-weight: 800;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+        }
+
+        h1,
+        h2,
+        h3,
+        p {
+            margin-top: 0;
+        }
+
+        h1 {
+            margin-bottom: 18px;
+            font-size: clamp(2.9rem, 8vw, 6.6rem);
+            line-height: 0.95;
+            letter-spacing: 0;
+        }
+
+        .hero-copy {
+            max-width: 630px;
+            margin-bottom: 28px;
+            color: rgba(255, 255, 255, 0.9);
+            font-size: clamp(1.05rem, 2vw, 1.32rem);
+        }
+
+        .actions {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+        }
+
+        .btn {
+            min-height: 52px;
+            padding: 13px 22px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            border: 0;
+            border-radius: 999px;
+            background: var(--wine);
+            color: white;
+            font-weight: 800;
+            text-decoration: none;
+            box-shadow: 0 14px 30px rgba(36, 25, 29, 0.2);
+            transition: transform 0.2s ease, box-shadow 0.2s ease, filter 0.2s ease;
+        }
+
+        .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 18px 36px rgba(36, 25, 29, 0.25);
+            filter: saturate(1.06);
+        }
+
+        .btn-whatsapp {
+            background: var(--whatsapp);
+            color: white;
+        }
+
+        .btn-instagram {
+            background: linear-gradient(135deg, #f58529, #dd2a7b 48%, #8134af);
+        }
+
+        .btn-facebook {
+            background: var(--facebook);
+        }
+
+        .btn-soft {
+            background: rgba(255, 255, 255, 0.14);
+            border: 1px solid rgba(255, 255, 255, 0.32);
+            color: white;
+            box-shadow: none;
+        }
+
+        .section {
+            padding: clamp(58px, 8vw, 96px) clamp(20px, 5vw, 72px);
+        }
+
+        .section-alt {
+            background: #fff0f5;
+        }
+
+        .section-head {
+            max-width: 760px;
+            margin-bottom: 34px;
+        }
+
+        .section-kicker {
+            margin-bottom: 8px;
+            color: var(--rose);
+            font-size: 0.82rem;
+            font-weight: 900;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+        }
+
+        .section-title {
+            margin-bottom: 10px;
+            font-size: clamp(2rem, 5vw, 4rem);
+            line-height: 1.02;
+            letter-spacing: 0;
+        }
+
+        .section-copy {
+            max-width: 680px;
+            color: var(--muted);
+            font-size: 1.05rem;
+        }
+
+        .proof-strip {
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: 1px;
+            background: rgba(114, 38, 65, 0.12);
+        }
+
+        .proof-item {
+            min-height: 132px;
+            padding: 24px;
+            display: grid;
+            align-content: center;
+            background: white;
+        }
+
+        .proof-item strong {
+            display: block;
+            color: var(--wine);
+            font-size: clamp(1.7rem, 4vw, 2.6rem);
+            line-height: 1;
+        }
+
+        .proof-item span {
+            color: var(--muted);
+            font-weight: 700;
+        }
+
+        .portfolio-grid {
+            display: grid;
+            grid-template-columns: repeat(12, 1fr);
+            gap: 14px;
+        }
+
+        .work-card {
+            position: relative;
+            min-height: 360px;
+            overflow: hidden;
+            border-radius: 8px;
+            background: #eadce2;
+            box-shadow: var(--shadow);
+        }
+
+        .work-card.large {
+            grid-column: span 6;
+            min-height: 620px;
+        }
+
+        .work-card.medium {
+            grid-column: span 3;
+            min-height: 380px;
+        }
+
+        .work-card.wide {
+            grid-column: span 6;
+            min-height: 380px;
+        }
+
+        .work-card img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center 50%;
+            transform: scale(1.18);
+            transition: transform 0.6s ease;
+        }
+
+        .work-card:hover img {
+            transform: scale(1.24);
+        }
+
+        .work-card img.focus-low {
+            object-position: center 56%;
+        }
+
+        .work-card img.focus-mid {
+            object-position: center 50%;
+        }
+
+        .work-card img.focus-high {
+            object-position: center 44%;
+        }
+
+        .work-label {
+            position: absolute;
+            left: 14px;
+            right: 14px;
+            bottom: 14px;
+            padding: 12px 14px;
+            display: flex;
+            justify-content: space-between;
+            gap: 12px;
+            border-radius: 8px;
+            background: rgba(255, 250, 251, 0.9);
+            color: var(--ink);
+            font-weight: 800;
+            backdrop-filter: blur(10px);
+        }
+
+        .work-label span {
+            color: var(--rose);
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(4, minmax(0, 1fr));
+            gap: 16px;
+        }
+
+        .service-card {
+            padding: 24px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            gap: 20px;
+            min-height: 300px;
+            border: 1px solid rgba(114, 38, 65, 0.12);
+            border-radius: 8px;
+            background: white;
+            box-shadow: 0 14px 34px rgba(67, 31, 43, 0.08);
+        }
+
+        .service-card h3 {
+            margin-bottom: 8px;
+            font-size: 1.38rem;
+            line-height: 1.15;
+        }
+
+        .service-card p {
+            color: var(--muted);
+        }
+
+        .service-card .btn {
+            width: 100%;
+            padding-inline: 16px;
+            font-size: 0.94rem;
+        }
+
+        .experience {
+            display: grid;
+            grid-template-columns: 0.92fr 1.08fr;
+            gap: clamp(24px, 5vw, 64px);
+            align-items: center;
+        }
+
+        .logo-panel {
+            padding: clamp(26px, 5vw, 46px);
+            display: grid;
+            justify-items: center;
+            gap: 20px;
+            border-radius: 8px;
+            background: white;
+            box-shadow: var(--shadow);
+            text-align: center;
+        }
+
+        .logo-panel img {
+            width: min(300px, 82vw);
+            border-radius: 50%;
+        }
+
+        .steps {
+            display: grid;
+            gap: 14px;
+        }
+
+        .step {
+            display: grid;
+            grid-template-columns: 54px 1fr;
+            gap: 16px;
+            padding: 18px;
+            border-radius: 8px;
+            background: rgba(255, 255, 255, 0.72);
+            border: 1px solid rgba(114, 38, 65, 0.1);
+        }
+
+        .step-number {
+            width: 54px;
+            height: 54px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            background: var(--wine);
+            color: white;
+            font-weight: 900;
+        }
+
+        .step h3 {
+            margin-bottom: 4px;
+        }
+
+        .step p {
+            margin-bottom: 0;
+            color: var(--muted);
+        }
+
+        .contact-band {
+            display: grid;
+            grid-template-columns: 1fr auto;
+            gap: 24px;
+            align-items: center;
+            padding: clamp(28px, 5vw, 46px);
+            border-radius: 8px;
+            background:
+                linear-gradient(135deg, rgba(114, 38, 65, 0.92), rgba(233, 92, 143, 0.88)),
+                url("45.jpeg");
+            background-size: cover;
+            background-position: center 42%;
+            color: white;
+            box-shadow: var(--shadow);
+        }
+
+        .contact-band p {
+            margin-bottom: 0;
+            color: rgba(255, 255, 255, 0.86);
+        }
+
+        .socials {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        footer {
+            padding: 30px clamp(20px, 5vw, 72px);
+            display: flex;
+            justify-content: space-between;
+            gap: 20px;
+            color: var(--muted);
+            font-size: 0.95rem;
+        }
+
+        @media (max-width: 980px) {
+            .services-grid {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+            }
+
+            .experience,
+            .contact-band {
+                grid-template-columns: 1fr;
+            }
+
+            .work-card.large,
+            .work-card.medium,
+            .work-card.wide {
+                grid-column: span 6;
+            }
+        }
+
+        @media (max-width: 720px) {
+            .topbar {
+                position: sticky;
+                padding: 10px 16px;
+            }
+
+            .brand-logo {
+                width: 42px;
+                height: 42px;
+            }
+
+            .brand-name small {
+                display: none;
+            }
+
+            .nav-links .icon-link:not(.primary-nav) {
+                display: none;
+            }
+
+            .hero {
+                min-height: 78vh;
+                padding: 82px 18px 42px;
+                background:
+                    linear-gradient(180deg, rgba(36, 25, 29, 0.42) 0%, rgba(36, 25, 29, 0.84) 76%),
+                    url("9.jpeg");
+                background-size: 140% auto;
+                background-position: center 58%;
+            }
+
+            h1 {
+                font-size: clamp(2.72rem, 14vw, 4.1rem);
+            }
+
+            .actions {
+                width: 100%;
+            }
+
+            .hero .btn,
+            .contact-band .btn {
+                width: 100%;
+            }
+
+            .service-card {
+                min-height: 250px;
+            }
+
+            .proof-strip,
+            .services-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .portfolio-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .work-card.large,
+            .work-card.medium,
+            .work-card.wide {
+                grid-column: auto;
+                min-height: 440px;
+            }
+
+            .work-card.large {
+                min-height: 520px;
+            }
+
+            .work-label {
+                flex-direction: column;
+                gap: 2px;
+            }
+
+            .step {
+                grid-template-columns: 1fr;
+            }
+
+            footer {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav class="topbar" aria-label="Navegación principal">
+        <a class="brand" href="#inicio" aria-label="Ir al inicio">
+            <img class="brand-logo" src="WhatsApp Image 2026-05-01 at 7.21.08 AM.jpeg" alt="Logo de Aliice H. Studio Nails">
+            <span class="brand-name">
+                Aliice H.
+                <small>Studio Nails</small>
+            </span>
+        </a>
+
+        <div class="nav-links" aria-label="Redes y contacto">
+            <a class="icon-link" href="https://www.instagram.com/aliiceh_studionails?igsh=MWJydWVuejVpZDk5ZA%3D%3D&amp;utm_source=qr" target="_blank" rel="noopener noreferrer" aria-label="Abrir Instagram">IG</a>
+            <a class="icon-link" href="https://www.facebook.com/share/1BK9KTYeGh/?mibextid=wwXIfr" target="_blank" rel="noopener noreferrer" aria-label="Abrir Facebook">FB</a>
+            <a class="icon-link primary-nav" href="https://wa.me/5215510218800?text=Hola%2C%20vi%20tu%20p%C3%A1gina%20y%20quiero%20agendar%20una%20cita%20para%20mis%20u%C3%B1as." aria-label="Agendar por WhatsApp">WA</a>
+        </div>
+    </nav>
+
+    <header class="hero" id="inicio">
+        <div class="hero-inner">
+            <p class="eyebrow">Nail art personalizado</p>
+            <h1>Aliice H. Studio Nails</h1>
+            <p class="hero-copy">Diseños con detalle, brillo y personalidad. Cuéntanos qué estilo tienes en mente y recibe una atención hecha a tu medida por WhatsApp.</p>
+            <div class="actions">
+                <a class="btn btn-whatsapp" href="https://wa.me/5215510218800?text=Hola%2C%20vi%20tu%20p%C3%A1gina%20y%20quiero%20agendar%20una%20cita%20para%20mis%20u%C3%B1as." aria-label="Agendar una cita por WhatsApp">Agendar por WhatsApp</a>
+                <a class="btn btn-soft" href="#galeria">Ver diseños</a>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <section class="proof-strip" aria-label="Razones para elegir Aliice H. Studio Nails">
+            <div class="proof-item">
+                <strong>Diseño</strong>
+                <span>Nail art desde limpio y elegante hasta maximalista.</span>
+            </div>
+            <div class="proof-item">
+                <strong>Detalle</strong>
+                <span>Acabados pulidos, aplicaciones y referencias personalizadas.</span>
+            </div>
+            <div class="proof-item">
+                <strong>Cita</strong>
+                <span>Contacto directo por WhatsApp, Instagram o Facebook.</span>
+            </div>
+        </section>
+
+        <section class="section" id="galeria">
+            <div class="section-head">
+                <p class="section-kicker">Trabajos recientes</p>
+                <h2 class="section-title">Una galería hecha para inspirarte antes de reservar.</h2>
+                <p class="section-copy">Aquí la protagonista es la uña real: acabados glossy, detalles 3D, corazones, moños, brillos, estilos cute y diseños de temporada.</p>
+            </div>
+
+            <div class="portfolio-grid">
+                <article class="work-card large">
+                    <img class="focus-low" src="WhatsApp Image 2026-05-01 at 7.22.52 AM2.jpeg" alt="Diseño de uñas francesas con moños blancos y cristales">
+                    <div class="work-label">French con moños <span>Elegante</span></div>
+                </article>
+                <article class="work-card medium">
+                    <img class="focus-mid" src="3.jpeg" alt="Uñas rojas con corazones blancos y glitter">
+                    <div class="work-label">Rojo corazón <span>Romántico</span></div>
+                </article>
+                <article class="work-card medium">
+                    <img class="focus-low" src="45.jpeg" alt="Uñas nude con efecto metálico y cristales dorados">
+                    <div class="work-label">Nude premium <span>Brillo</span></div>
+                </article>
+                <article class="work-card wide">
+                    <img class="focus-mid" src="9.jpeg" alt="Uñas rosas con personajes 3D y glitter">
+                    <div class="work-label">Cute 3D <span>Personalizado</span></div>
+                </article>
+                <article class="work-card wide">
+                    <img class="focus-low" src="7.jpeg" alt="Uñas almendradas con corazones rosas y líneas doradas">
+                    <div class="work-label">Soft glam <span>Delicado</span></div>
+                </article>
+            </div>
+        </section>
+
+        <section class="section section-alt" id="servicios">
+            <div class="section-head">
+                <p class="section-kicker">Elige cómo empezar</p>
+                <h2 class="section-title">Cotización personalizada para cada diseño.</h2>
+                <p class="section-copy">Elige el botón que mejor describa lo que necesitas y WhatsApp abrirá con un mensaje claro para iniciar la conversación.</p>
+            </div>
+
+            <div class="services-grid">
+                <article class="service-card">
+                    <div>
+                        <h3>Cotizar un diseño</h3>
+                        <p>Para enviar una referencia, pedir una idea similar o preguntar qué se puede adaptar a tu estilo.</p>
+                    </div>
+                    <a class="btn btn-whatsapp" href="https://wa.me/5215510218800?text=Hola%2C%20vi%20tu%20p%C3%A1gina%20y%20quiero%20cotizar%20un%20dise%C3%B1o%20de%20u%C3%B1as.%20Tengo%20una%20referencia%20para%20enviarte." aria-label="Cotizar un diseño por WhatsApp">Cotizar diseño</a>
+                </article>
+
+                <article class="service-card">
+                    <div>
+                        <h3>Agendar cita</h3>
+                        <p>Para revisar disponibilidad, fecha, horario y el tipo de servicio que necesitas.</p>
+                    </div>
+                    <a class="btn btn-whatsapp" href="https://wa.me/5215510218800?text=Hola%2C%20vi%20tu%20p%C3%A1gina%20y%20quiero%20agendar%20una%20cita.%20%C2%BFQu%C3%A9%20horarios%20tienes%20disponibles%3F" aria-label="Agendar cita por WhatsApp">Agendar cita</a>
+                </article>
+
+                <article class="service-card">
+                    <div>
+                        <h3>Diseño personalizado</h3>
+                        <p>Para uñas con personajes, corazones, moños, cristales, efectos o nail art más detallado.</p>
+                    </div>
+                    <a class="btn btn-whatsapp" href="https://wa.me/5215510218800?text=Hola%2C%20me%20interesa%20un%20dise%C3%B1o%20personalizado%20con%20nail%20art.%20%C2%BFMe%20puedes%20orientar%3F" aria-label="Pedir diseño personalizado por WhatsApp">Pedir personalizado</a>
+                </article>
+
+                <article class="service-card">
+                    <div>
+                        <h3>Retoque o cambio</h3>
+                        <p>Para renovar tu set, cambiar color, ajustar largo o preparar un diseño para una ocasión especial.</p>
+                    </div>
+                    <a class="btn btn-whatsapp" href="https://wa.me/5215510218800?text=Hola%2C%20quiero%20hacerme%20un%20retoque%20o%20cambio%20de%20dise%C3%B1o.%20%C2%BFMe%20puedes%20ayudar%3F" aria-label="Solicitar retoque o cambio por WhatsApp">Solicitar retoque</a>
+                </article>
+            </div>
+        </section>
+
+        <section class="section">
+            <div class="experience">
+                <aside class="logo-panel" aria-label="Marca Aliice H Studio Nails">
+                    <img src="WhatsApp Image 2026-05-01 at 7.21.08 AM.jpeg" alt="Logo floral de Aliice H. Studio Nails">
+                    <div>
+                        <h2>Aliice H. Studio Nails</h2>
+                        <p class="section-copy">Un espacio para transformar referencias, temporadas y gustos personales en uñas que sí se sienten tuyas.</p>
+                    </div>
+                </aside>
+
+                <div>
+                    <p class="section-kicker">Cómo funciona</p>
+                    <h2 class="section-title">Un proceso sencillo para llegar al diseño ideal.</h2>
+                    <div class="steps">
+                        <article class="step">
+                            <span class="step-number">01</span>
+                            <div>
+                                <h3>Envía tu idea</h3>
+                                <p>Comparte referencias, colores, largo y el estilo que quieres lograr.</p>
+                            </div>
+                        </article>
+                        <article class="step">
+                            <span class="step-number">02</span>
+                            <div>
+                                <h3>Recibe orientación</h3>
+                                <p>Se revisa la complejidad del diseño, materiales y tiempo aproximado.</p>
+                            </div>
+                        </article>
+                        <article class="step">
+                            <span class="step-number">03</span>
+                            <div>
+                                <h3>Agenda tu cita</h3>
+                                <p>Confirmas disponibilidad y llegas con una idea clara para tu nuevo set.</p>
+                            </div>
+                        </article>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section" id="contacto">
+            <div class="contact-band">
+                <div>
+                    <p class="section-kicker">Contacto directo</p>
+                    <h2 class="section-title">¿Lista para tu próximo diseño?</h2>
+                    <p>WhatsApp: +52 1 55 1021 8800. También puedes seguir el trabajo en Instagram y Facebook para ver más inspiración.</p>
+                </div>
+                <div class="socials">
+                    <a class="btn btn-whatsapp" href="https://wa.me/5215510218800?text=Hola%2C%20vi%20tu%20p%C3%A1gina%20y%20quiero%20contactarte%20para%20mis%20u%C3%B1as." aria-label="Contactar por WhatsApp">WhatsApp</a>
+                    <a class="btn btn-instagram" href="https://www.instagram.com/aliiceh_studionails?igsh=MWJydWVuejVpZDk5ZA%3D%3D&amp;utm_source=qr" target="_blank" rel="noopener noreferrer" aria-label="Abrir Instagram de Aliice H Studio Nails">Instagram</a>
+                    <a class="btn btn-facebook" href="https://www.facebook.com/share/1BK9KTYeGh/?mibextid=wwXIfr" target="_blank" rel="noopener noreferrer" aria-label="Abrir Facebook de Aliice H Studio Nails">Facebook</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <span>Aliice H. Studio Nails</span>
+        <span>Nail art personalizado por cita</span>
+    </footer>
+</body>
+</html>
